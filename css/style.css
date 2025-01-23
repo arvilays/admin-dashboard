@@ -1,5 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/* "fonts: "roboto" */
+
+:root {
+    --blue: hsl(201, 79%, 47%);
+    --grey: hsl(214, 32%, 91%);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: "roboto";
+    height: 100vh;
+}
+
+img {
+    width: 30px;
+}
+
+.avatar {
+    width: 40px;
+    border-radius: 50%;
+}
+
+/*##########################################
+||               CONTAINER                ||
+##########################################*/
+@media only screen and (min-width: 0px) {
+    .container {
+        display: grid;
+        grid-template-columns: 340px 1fr;
+        grid-template-rows: 160px 1fr;
+        height: 100%;
+    }
+}
+
+/*##############################
+||          SIDEBAR           ||
+##############################*/
+@media only screen and (min-width: 0px) {
+    .sidebar {
+        background-color: var(--blue);
+        grid-area: 1 / 1 / 3 / 2; 
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding: 15px 35px;
+    }
+
+    .sidebar-category {
+        display: flex;
+        align-items: center;
+        gap: 33px;
+        color: white;
+        font-size: 1.5em;
+        font-weight: 500;
+    }
+
+    .sidebar-category > img {
+        filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(5deg) brightness(106%) contrast(101%);
+    }
+
+    .sidebar-title {
+        font-size: 2em;
+        font-weight: 600;
+        position: relative;
+        right: 12.5px;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
+    .sidebar-title > img {
+        width: 50px;
+    }
+
+    .sidebar-communities {
+        margin-bottom: 50px;
+    }
+}
+
+/*##############################
+||           HEADER           ||
+##############################*/
+@media only screen and (min-width: 0px) {
+    .header {
+        background-color: white;
+        grid-area: 1 / 2 / 2 / 3; 
+        z-index: 1;
+        box-shadow: 0px 5px 5px hsl(0, 0%, 80%);
+        display: flex;
+        flex-direction: column;
+        padding: 0px 40px;
+    }
+
+    .search {
+        display: flex;
+        align-items: center;
+        height: 75px;
+        gap: 20px;
+    }
+
+    .search-magnify {
+        margin-right: -8px;
+    }
+
+    .search-bar {
+        flex: 1;
+    }
+
+    .search-bar > input {
+        background-color: var(--grey);
+        font-family: "roboto";
+        font-size: 1em;
+        width: 100%;
+        padding: 8px 20px;
+        border: none;
+        border-radius: 20px;
+    }
+
+    .search-bar > input:focus {
+        outline-color: var(--blue);
+    }
+
+    .search-bell {
+        margin-left: 100px;
+    }
+
+    .search-name {
+        font-weight: 800;
+    }
+
+    .welcome {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .welcome-avatar > img {
+        width: 65px;
+    } 
+
+    .welcome-greeting {
+        font-weight: 800;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .welcome-name {
+        font-size: 1.25em;
+    }
+
+    .welcome-new {
+        margin-left: auto;
+    }
+
+    .welcome-button {
+        background-color: var(--blue);
+        color: white;
+        text-align: center;
+        padding: 10px 0px;
+        width: 100px;
+        border-radius: 20px;
+    }
+}
+
+/*##############################
+||         DASHBOARD          ||
+##############################*/
+@media only screen and (min-width: 0px) {
+    .dashboard {
+        background-color: var(--grey);
+        grid-area: 2 / 2 / 3 / 3;
+        display: grid;
+        grid-template-columns: 1fr 340px;
+        grid-template-rows: auto auto 1fr;
+        padding: 30px 20px 30px 40px;
+    }
+
+    .dashboard-title {
+        font-size: 1.25em;
+        font-weight: 600;
+    }
+}
+
+/*##################
+||    PROJECTS    ||
+##################*/
+@media only screen and (min-width: 0px) {
+    .projects {
+        grid-area: 1 / 1 / 4 / 2;
+        margin-right: 25px;
+    }
+
+    .projects-title {
+        margin-bottom: 15px;
+    }
+
+    .projects-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        grid-auto-rows: 250px;
+        gap: 25px;
+    }
+
+    .projects-card {
+        background-color: white;
+    }
+}
+
+/*##################
+||  ANNOUNCEMENTS  ||
+##################*/
+@media only screen and (min-width: 0px) {
+    .announcements {
+        grid-area: 1 / 2 / 2 / 3;
+    }
+}
+
+/*##################
+||    TRENDING    ||
+##################*/
+@media only screen and (min-width: 0px) {
+    .trending {
+        grid-area: 2 / 2 / 3 / 3;
+    }
 }
